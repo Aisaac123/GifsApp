@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import {GifsService} from "./gifs/service/gifs.service";
 
 @Component({
   selector: 'app-root',
@@ -7,4 +8,6 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'gifs-app';
+  constructor(public readonly service:GifsService) {
+  }
 }

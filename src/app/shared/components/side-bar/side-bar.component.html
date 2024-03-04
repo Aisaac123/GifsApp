@@ -1,9 +1,13 @@
 <div class="bg-dark border-right p-3" id="side-bar">
-  <h2 class="text-light">GifsApp</h2>
-  <hr class="text-white">
-
+  <h1 class="text-light">GifsApp</h1>
+  <hr class="text-white pb-2">
+  <div class="row text-center text-light mb-4">
+    <h5>Historial de busqueda</h5>
+  </div>
   <div *ngFor="let tag of gifsService.tagHistory" class="list-group list-reset  mt-2">
-    <button class="list-group-item list-group-item-action text-center">
+    <button type="button"
+      class="list-group-item list-group-item-action text-center "
+      (click)="gifsService.searchTag(tag)">
       {{tag | titlecase}}
     </button>
   </div>

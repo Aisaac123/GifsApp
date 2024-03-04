@@ -8,7 +8,7 @@ import {Gifs} from "../../interfaces/search-res";
   styleUrl: './home-page.component.css'
 })
 export class HomePageComponent {
-  constructor(private readonly gifService: GifsService) {
+  constructor(public readonly gifService: GifsService) {
 
   }
   get gifs(): Gifs[]{

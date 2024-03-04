@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import {Component} from '@angular/core';
 import {GifsService} from "../../../gifs/service/gifs.service";
 
 @Component({
@@ -9,4 +9,6 @@ import {GifsService} from "../../../gifs/service/gifs.service";
 export class SideBarComponent {
   constructor(public readonly gifsService:GifsService) {
   }
+
+
 }

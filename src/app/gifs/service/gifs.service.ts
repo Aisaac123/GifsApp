@@ -16,8 +16,7 @@ export class GifsService {
     return [...this.gifsList];
   }
   public searchTag(tag: string):void{
-    this.organizeTag(tag);
-    this.insertTag(tag)
+
 
     const params = new HttpParams()
       .set('api_key', apiKey)
@@ -28,7 +27,10 @@ export class GifsService {
       .subscribe(response => {
 
         this.gifsList = response.data;
+        this.organizeTag(tag);
+        this.insertTag(tag)
       })
+
   }
   private organizeTag(tag:string){
 
@@ -40,7 +42,7 @@ export class GifsService {
       return;
     }
     this.TagHistory.unshift(tag)
-    this.TagHistory = this.tagHistory.splice(0,10)
+    this.TagHistory = this.tagHistory.splice(0,20)
   }
   constructor(private http:HttpClient) { }
 }
