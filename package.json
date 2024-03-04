@@ -6,7 +6,15 @@
     "start": "ng serve",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
-    "test": "ng test"
+    "test": "ng test",
+    "build:href": "ng build --base-href ./",
+    "delete:docs": "if exist docs rmdir /s /q docs",
+    "delete:dist": "if exist dist rmdir /s /q dist",
+    "copy:dist": "md docs && xcopy /s /e dist\\gifs-app\\browser docs\n",
+    "build:docs": "npm run delete:docs && npm run delete:dist && npm run build:href && npm run copy:dist && npm run delete:dist",
+    "deploy:Git": "npm run build:Git && git add . && git commit -m 'Despliegue' && git push",
+    "push:Git": "git add . && git commit -m 'Componentes' && git push"
+
   },
   "private": true,
   "dependencies": {
