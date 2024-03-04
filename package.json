@@ -12,7 +12,7 @@
     "delete:dist": "if exist dist rmdir /s /q dist",
     "copy:dist": "md docs && xcopy /s /e dist\\gifs-app\\browser docs\n",
     "build:docs": "npm run delete:docs && npm run delete:dist && npm run build:href && npm run copy:dist && npm run delete:dist",
-    "deploy:Git": "npm run build:Git && git add . && git commit -m 'Despliegue' && git push",
+    "deploy:Git": "npm run build:docs && git add . && git commit -m 'Despliegue' && git push",
     "push:Git": "git add . && git commit -m 'Componentes' && git push"
 
   },

@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import {GifsService} from "../../../gifs/service/gifs.service";
 
 @Component({
   selector: 'shared-side-bar',
@@ -6,5 +7,6 @@ import { Component } from '@angular/core';
   styleUrl: './side-bar.component.css'
 })
 export class SideBarComponent {
-
+  constructor(public readonly gifsService:GifsService) {
+  }
 }
