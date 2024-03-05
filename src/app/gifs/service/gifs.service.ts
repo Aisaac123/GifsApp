@@ -58,6 +58,6 @@ export class GifsService {
   }
   constructor(private http:HttpClient) {
     this.loadLocalStorage()
-    this.searchTag(this.tagHistory[this.tagHistory.length -1])
+    this.searchTag(this.tagHistory[0])
   }
 }
