@@ -29,6 +29,7 @@ export class GifsService {
         this.gifsList = response.data;
         this.organizeTag(tag);
         this.insertTag(tag)
+        this.saveLocalStorage();
       })
 
   }
@@ -44,5 +45,19 @@ export class GifsService {
     this.TagHistory.unshift(tag)
     this.TagHistory = this.tagHistory.splice(0,20)
   }
-  constructor(private http:HttpClient) { }
+
+  private saveLocalStorage():void{
+    localStorage.setItem('history', JSON.stringify(this.tagHistory))
+  }
+
+  private loadLocalStorage():void{
+    const temporal = localStorage.getItem('history')
+    if (temporal != null){
+      this.TagHistory = JSON.parse(temporal);
+    }
+  }
+  constructor(private http:HttpClient) {
+    this.loadLocalStorage()
+    this.searchTag(this.tagHistory[this.tagHistory.length -1])
+  }
 }
