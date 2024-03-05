@@ -56,8 +56,10 @@ export class GifsService {
       this.TagHistory = JSON.parse(temporal);
     }
   }
+  public a = 123;
   constructor(private http:HttpClient) {
     this.loadLocalStorage()
     this.searchTag(this.tagHistory[0])
+    this.a +=20;
   }
 }
