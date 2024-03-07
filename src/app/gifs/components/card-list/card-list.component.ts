@@ -1,5 +1,5 @@
 import {Component, Input} from '@angular/core';
-import {Gifs} from "../../interfaces/search-res";
+import {Gif} from "../../interfaces/search-res";
 
 @Component({
   selector: 'gifs-card-list',
@@ -8,5 +8,5 @@ import {Gifs} from "../../interfaces/search-res";
 })
 export class CardListComponent {
   @Input()
-  public gifs: Gifs[] = []
+  public gifs: Gif[] = []
 }

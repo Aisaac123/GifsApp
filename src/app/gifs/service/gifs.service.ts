@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import {HttpClient, HttpParams} from "@angular/common/http";
-import {Gifs, SearchResponse} from "../interfaces/search-res";
+import {Gif, SearchResponse} from "../interfaces/search-res";
 
 const apiKey:string = "1503yzVmgaXuw8P0lGX4vIfcAPFeEq9p";
 const apiUrl:string = "https://api.giphy.com/v1/gifs";
@@ -11,8 +11,8 @@ export class GifsService {
   get tagHistory():string[]{
     return [...this.TagHistory];
   }
-  private gifsList: Gifs[] = [];
-  get gifs():Gifs[]{
+  private gifsList: Gif[] = [];
+  get gifs():Gif[]{
     return [...this.gifsList];
   }
   public searchTag(tag: string):void{

@@ -4,6 +4,7 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
+    "start:o": "ng serve -o",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
@@ -12,9 +13,8 @@
     "delete:dist": "if exist dist rmdir /s /q dist",
     "copy:dist": "md docs && xcopy /s /e dist\\gifs-app\\browser docs\n",
     "build:docs": "npm run delete:docs && npm run delete:dist && npm run build:href && npm run copy:dist && npm run delete:dist",
-    "deploy:Git": "npm run build:docs && git add . && git commit -m \"$COMMIT_MESSAGE\" && git push",
+    "deploy:Git": "npm run build:docs && git add . && git commit -m 'Despliegue' && git push",
     "push:Git": "git add . && git commit -m 'Componentes' && git push"
-
   },
   "private": true,
   "dependencies": {
@@ -26,6 +26,7 @@
     "@angular/platform-browser": "^17.2.0",
     "@angular/platform-browser-dynamic": "^17.2.0",
     "@angular/router": "^17.2.0",
+    "animate.css": "^4.1.1",
     "rxjs": "~7.8.0",
     "tslib": "^2.3.0",
     "zone.js": "~0.14.3"
